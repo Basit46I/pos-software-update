@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AddSale from './AddSale';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const navigate = useNavigate();
+
+    // Check if the user is authenticated
+    useEffect(() => {
+        const isAuthenticated = localStorage.getItem("isAuthenticated");
+        if (!isAuthenticated) {
+            navigate('/login'); // Redirect to login if not authenticated
+        }
+    }, [navigate]);
 
     const toggleSidebar = () => {
         setCollapsed(!collapsed);

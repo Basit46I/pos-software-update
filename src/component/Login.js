@@ -13,8 +13,9 @@ const Login = (props) => {
         const password = "admin123!@";
 
         if (credentials.email === email && credentials.password === password) {
+            localStorage.setItem("isAuthenticated", "true");
             props.showAlert("Logged in successfuly", "success");
-            history('/')
+            history('/dashboard')
         } else {
             props.showAlert("Invalid Details", "danger");
         }

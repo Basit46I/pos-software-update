@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Login from './component/Login';
+import Sidebar from './component/Sidebar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -28,7 +29,8 @@ function App() {
       <Alert alert={alert} />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Login showAlert={showAlert} />} />
+          <Route exact path="/dashboard" element={<Sidebar showAlert={showAlert} />} />
+          <Route exact path="/login" element={<Login showAlert={showAlert} />} />
         </Routes>
       </Router>
     </div>
