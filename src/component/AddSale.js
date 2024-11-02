@@ -92,7 +92,7 @@ const AddSale = () => {
     return (
         <div className="container-fluid d-flex">
             {/* Left Menu Section */}
-            <div className="menu-section d-flex flex-wrap align-self-start" style={{ width: "100%", gap: "20px" }}>
+            <div className="menu-section d-flex flex-wrap align-self-start" style={{ width: "62%", gap: "20px" }}>
                 {items.map(item => (
                     <div
                         key={item.id}
@@ -109,7 +109,7 @@ const AddSale = () => {
 
             {/* Right Order Summary Section */}
             <div className="order-summary bg-white shadow-sm d-flex flex-column justify-content-between"
-                style={{ width: "45%", padding: "1rem", height: "89vh", position: "sticky", top: "50px" }}>
+                style={{ width: "32%", padding: "1rem", height: "86vh", position: "fixed", top: "96px", left: "67%" }}>
                 <div>
                     <h4 className="mb-3">Order Summary</h4>
 
