@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AddSale from './AddSale';
 import Header from './Header';
-import OrderCategory from './OrderCategory';
 
 const Sidebar = () => {
     const [collapsed, setCollapsed] = useState(false);
@@ -11,7 +10,7 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="d-flex">
+        <div className="d-flex" style={{ backgroundColor: "#f4f6f9", minHeight: "100vh", display: "flex" }}>
             {/* Sidebar */}
             <div
                 className={`sidebar d-flex flex-column bg-dark text-white p-3 ${collapsed ? 'collapsed' : ''}`}
@@ -30,17 +29,7 @@ const Sidebar = () => {
                 </div>
                 <ul className="nav flex-column">
                     {[
-                        { href: "/", icon: "fas fa-tachometer-alt", label: "Dashboard" },
-                        { href: "/", icon: "fas fa-plus-circle", label: "Sale" },
-                        { href: "/", icon: "fas fa-file-alt", label: "Category" },
-                        { href: "/", icon: "fas fa-file-alt", label: "Sub Category" },
-                        { href: "/", icon: "fas fa-tags", label: "Brands" },
-                        { href: "/", icon: "fas fa-box", label: "Products" },
-                        { href: "/", icon: "fas fa-truck", label: "Shipping" },
-                        { href: "/", icon: "fas fa-shopping-bag", label: "Orders" },
-                        { href: "/", icon: "fas fa-percent", label: "Discount" },
-                        { href: "/", icon: "fas fa-users", label: "Users" },
-                        { href: "/", icon: "fas fa-file-alt", label: "Pages" },
+                        { href: "/", icon: "fas fa-plus-circle", label: "Sale" }
                     ].map((item, index) => (
                         <li className="nav-item" key={index}>
                             <a href={item.href} className={`nav-link d-flex ${collapsed ? 'justify-content-center' : ''} align-items-center`}>
@@ -65,7 +54,6 @@ const Sidebar = () => {
                 <Header toggleSidebar={toggleSidebar} />
                 <div className="px-2 py-3">
                     <div className="p-3">
-                        <OrderCategory />
                     </div>
                     <AddSale />
                 </div>

@@ -13,7 +13,7 @@ const OrderCategory = () => {
 
     return (
         <div className="d-flex flex-wrap justify-content-center align-items-center" style={{ width: "50%" }}>
-            {/* {categories.map(category => (
+            {categories.map(category => (
                 <div key={category.id} className="p-1 m-1 bg-white shadow-sm rounded d-flex flex-column align-items-center" style={{ width: "100px", height: "100px" }}>
                     <div style={{ width: "45px", height: "45px" }}>
                         <img className="w-100 h-100" src={category.img} alt={category.name} />
@@ -22,7 +22,7 @@ const OrderCategory = () => {
                         {category.name}
                     </div>
                 </div>
-            ))} */}
+            ))}
         </div>
     )
 }

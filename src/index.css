@@ -54,11 +54,6 @@ body {
   height: 30px;
 }
 
-.container {
-  display: flex;
-  width: 100%;
-}
-
 .sidebar {
   width: 300px;
   /* Set a fixed width */
@@ -73,16 +68,11 @@ body {
   /* Allows scrolling for items */
 }
 
-.card {
-  width: 200px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
+.menu-items {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card:hover {
+.menu-items:hover {
   transform: scale(1.03);
   /* This scales the card to 110% */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);

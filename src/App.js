@@ -1,10 +1,36 @@
+import { useState } from 'react';
 import './App.css';
-import Sidebar from './component/Sidebar';
+import Login from './component/Login';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom"
+import Alert from './component/Alert';
 
 function App() {
+
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500)
+  }
+
+
   return (
-    <div style={{ backgroundColor: "#f4f6f9", minHeight: "100vh", display: "flex" }}>
-      <Sidebar />
+    <div>
+      <Alert alert={alert} />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Login showAlert={showAlert} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
